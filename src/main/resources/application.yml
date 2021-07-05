@@ -1,0 +1,12 @@
+micronaut:
+  application:
+    name: nossaCasaDoCodigo
+datasources:
+  default:
+    url: ${CONTAINER_DATABASE_URL:`jdbc:mysql://localhost:3306/casa-do-codigo-micronout?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC`}
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: ${CONTAINER_DATABASE_USERNAME:root}
+    password: ${CONTAINER_DATABASE_PASSWORD:root123MySQL}
+    schema-generate: CREATE_DROP
+    dialect: org.hibernate.dialect.MySQLInnoDBDialect
+jpa.default.properties.hibernate.hbm2ddl.auto: create-drop
